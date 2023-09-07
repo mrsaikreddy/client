@@ -1,0 +1,7 @@
+.idea
+log.txt
+*.pyc
+rtsp_video.mp4
+/vido
+/temp_logs
+/facebank

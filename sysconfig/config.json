@@ -1,0 +1,207 @@
+{
+    "common": {
+        "config_version": "1.0.1",
+        "server_version": "1.0.0",
+        "model_version": "1.0.0",
+        "client_version": "1.0.0",
+        "server_ip": "http://172.17.0.2:10230/",
+        "roi_ip": "https://dev.trakr.live/api/v1/O9tfwWn1fzlSVSQgtplU/telemetry",
+        "roi_storage_ip": "https://dev.trakr.live/hapi/image/TrainImageData",
+        "cloud_status_ip": "https://dev.trakr.live/api/v1/O9tfwWn1fzlSVSQgtplU/attributes",
+        "train_storage_ip": "https://dev.trakr.live/api/hapi/testimage/TrainImageData/",
+        "alert_storage_ip": "https://dev.trakr.live/api/hapi/testimage/AlertImageData",
+        "workers": "1",
+        "TestingLevel-help": "0- real camera to real cloud; 1- real camera to test cloud 2- sample camera to test cloud",
+        "TestingLevel": 1,
+        "ClientName": "TESTING",
+        "CamNotReachableLimit": 5,
+        "ServerNotReachableLimit": 5,
+        "CamAliveLimit": 30,
+        "LoggingLevel": "DEBUG",
+        "LogFileSave": true,
+        "Alert2Train": true,
+        "enableFrame": true,
+        "enableAlert": true,
+        "frameFile": "DataFrame.png",
+        "enableTraining": true,
+        "enableSpeaker": true,
+        "sav_vio_img": true,
+        "save_all_detection": true,
+        "save_all_inp_img": true,
+        "CamDelay": 20,
+        "test_url": "https://dev.trakr.live/api/v1/O9tfwWn1fzlSVSQgtplU/telemetry",
+        "alert_url": "https://dev.trakr.live/api/v1/O9tfwWn1fzlSVSQgtplU/telemetry",
+        "train_url": "https://dev.trakr.live/api/v1/O9tfwWn1fzlSVSQgtplU/telemetry",
+        "audio_key": {
+            "nohelmet": "m:1",
+            "novest": "m:2",
+            "nomask": "m:3",
+            "noshoe": "m:4"
+        },
+        "recommendations": {
+            "nohelmet": "-> Please train workers to enter with proper \n safety helmet",
+            "novest": "-> Please train workers to enter with proper \n safety vest",
+            "nomask": "-> Please train workers to enter with proper \n mask",
+            "noshoe": "-> Please train workers to enter with proper \n shoe",
+            "nosafetyvest": "-> Please train workers to enter with proper \n safety vest",
+            "car": "something",
+            "person": "something",
+            "bus": "something",
+            "truck": "something",
+            "social_distancing": "Please maintain social social_distancing"
+        },
+        "ROI_crop_en": 0,
+        "ROI_en": 1,
+        "batch_size": 1
+    },
+    "sample_cameras": [
+        {
+            "CameraId": 78,
+            "CamName": "sample_cam1",
+            "Address": "dfghj",
+            "Detection": "fghjk",
+            "train_en": "true",
+            "alert_en": "true",
+            "snapshot_en": "false",
+            "en_spkr": 1,
+            "sav_vio_img": 1,
+            "save_all_detection": 1,
+            "save_all_inp_img": 1,
+            "CamDelay": -6,
+            "train_time_pause": -6,
+            "alert_time_pause": 2,
+            "ROI_crop_en": "3",
+            "ROI": "NA",
+            "Speaker": "Na"
+        },
+        {
+            "CameraId": 12,
+            "CamName": "sample_cam2",
+            "Address": "dfg",
+            "Detection": "fg",
+            "train_en": true,
+            "alert_en": true,
+            "snapshot_en": false,
+            "en_spkr": 1,
+            "sav_vio_img": 1,
+            "save_all_detection": 1,
+            "save_all_inp_img": 1,
+            "CamDelay": -7,
+            "train_time_pause": 4,
+            "alert_time_pause": -4,
+            "ROI_crop_en": -4,
+            "ROI": "dggd",
+            "Speaker": "dgfdg"
+        }
+    ],
+    "cameras": [
+        {
+            "CameraId": 0,
+            "CamName": "cloudtestCam1",
+            "Address": "rtsp://admin:Hspl@560103@192.168.1.190:554/Streaming/Channels/201",
+            "Detection": "person:face:car:nohelmet",
+            "Speaker": "NA",
+            "train_en": true,
+            "alert_en": true,
+            "snapshot_en": false,
+            "en_spkr": 1,
+            "sav_vio_img": 1,
+            "save_all_detection": 1,
+            "save_all_inp_img": 1,
+            "CamDelay": 0.1,
+            "train_time_pause": 10,
+            "alert_time_pause": 10,
+            "ROI_crop_en": 0,
+            "points": [
+                "1046,280",
+                "796,191",
+                "957,90",
+                "1152,154"
+            ],
+            "sd_thresh_limit_x": 1000,
+            "sd_thresh_limit_y": 1000,
+            "Detection_lev1": "person:vehicle",
+            "Detection_lev2": "nohelmet:nosafetyvest",
+            "ROI": "NA",
+            "roi_config": {
+                "ROI1": {
+                    "points": [
+                        "0.4,0.2",
+                        "0.4,0.8",
+                        "0.9,0.8",
+                        "0.9,0.2"
+                    ],
+                    "speaker_ip": "10.20.210.1",
+                    "detections": "nosafetyharness:person:social_distancing",
+                    "social_distancing": {
+                        "sd_thresh_limit_x": 1000,
+                        "sd_thresh_limit_y": 1000,
+                        "points": [
+                            "1046,280",
+                            "796,191",
+                            "957,90",
+                            "1152,154"
+                        ]
+                    }
+                },
+                "ROI2": {
+                    "points": [
+                        "0.5639756944444445,0.056867283950617284",
+                        "0.6456163194444444,0.048379629629629634",
+                        "0.6585503472222222,0.16327160493827161",
+                        "0.5844184027777778,0.18626543209876545"
+                    ],
+                    "speaker_ip": "10.20.210.1",
+                    "detections": "person:car",
+                    "car": {
+                        "expected_direction": 42,
+                        "angle_range": 100
+                    }
+                }
+            }
+        },
+        {
+            "CameraId": 1,
+            "CamName": "cloudtestCam2",
+            "Address": "rtsp://admin:Hspl@560103@192.168.1.190:554/Streaming/Channels/401",
+            "Detection": "person:face:car:nohelmet",
+            "Speaker": "NA",
+            "train_en": true,
+            "alert_en": true,
+            "snapshot_en": false,
+            "en_spkr": 1,
+            "sav_vio_img": 1,
+            "save_all_detection": 1,
+            "save_all_inp_img": 1,
+            "CamDelay": 0.1,
+            "train_time_pause": 10,
+            "alert_time_pause": 10,
+            "ROI_crop_en": 0,
+            "Detection_lev1": "person:vehicle",
+            "Detection_lev2": "nohelmet:nosafetyvest",
+            "points": [
+                "1046,280",
+                "796,191",
+                "957,90",
+                "1152,154"
+            ],
+            "sd_thresh_limit_x": 1000,
+            "sd_thresh_limit_y": 1000,
+            "ROI": "NA",
+            "roi_config": {
+                "roi_config": {
+                    "ROI1": {
+                        "points": [
+                            "0.12385416666666667,0.22296296296296297",
+                            "0.37072916666666667,0.35074074074074074",
+                            "0.19052083333333333,0.4664814814814815",
+                            "0.11031250000000001,0.33685185185185185",
+                            "0.11031250000000001,0.33685185185185185"
+                        ],
+                        "detections": "label2"
+                    }
+                }
+            }
+        }
+    ]
+}

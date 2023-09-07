@@ -1,0 +1,37 @@
+version: "3.7"
+
+services:
+  client:
+    build: .
+    # ports:
+    #   - "22:22"
+    image: trakr-client:ROI0.0.1
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /home/TRAKR_AI/sysconfig:/app/sysconfig
+    devices:
+      - "/dev/net/tun"
+    cap_add:
+      - net_admin
+    privileged: false # LOCAL ONLY
+    network_mode: "host"
+    command: bash
+
+  # networks:
+  #   internal_network:
+  #     name: fd_internal_net
+  #     #name: bridge
+  #     internal: true
+  #   wide_network:
+  #     name: fd_wide_net
+  #     driver: bridge
+  # trakr_server:
+  #   build:
+  #     context: .
+  #   command: python temp.py
+  #   ports:
+  #     - "10230:10230"
+  #   dockerfile: Dockerfile 
+
